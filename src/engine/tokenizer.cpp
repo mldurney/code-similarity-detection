@@ -1,12 +1,12 @@
 #include <algorithm>
-#include <exception>
+#include <stdexcept>
 
 #include "tokenizer.hpp"
 
 using namespace Engine;
 
-std::string Engine::removeCharacters(const std::string&       original,
-                                     const std::vector<char>& chars) {
+std::string Engine::removeCharacters(const std::string &original,
+                                     const std::vector<char> &chars) {
     std::string modified;
     for (auto c : original) {
         if (std::find(chars.begin(), chars.end(), c) != chars.end()) {
@@ -17,16 +17,16 @@ std::string Engine::removeCharacters(const std::string&       original,
     return modified;
 }
 
-std::string Engine::removeWhitespace(const std::string& original) {
+std::string Engine::removeWhitespace(const std::string &original) {
     std::vector<char> whitespaceTokens = {' ', '\t', '\n', '\v', '\f', '\r'};
     return removeCharacters(original, whitespaceTokens);
 }
 
-std::vector<std::vector<char>> Engine::makeKGrams(const std::string& text,
-                                                  int                k) {
+std::vector<std::vector<char>> Engine::makeKGrams(const std::string &text,
+                                                  int k) {
     if (k < 1) {
-        std::string message
-            = "makeKGrams: received k = " + std::to_string(k) + "; need k > 1";
+        std::string message =
+            "makeKGrams: received k = " + std::to_string(k) + "; need k > 1";
         throw std::invalid_argument(message);
     }
 
@@ -44,8 +44,8 @@ std::vector<std::vector<char>> Engine::makeKGrams(const std::string& text,
     return kGrams;
 }
 
-std::vector<unsigned int>
-Engine::hashKGrams(const std::vector<std::vector<char>>& kGrams) {
+std::vector<unsigned int> Engine::hashKGrams(
+    const std::vector<std::vector<char>> &kGrams) {
     std::vector<unsigned int> hashes(kGrams.size());
 
     // TODO

@@ -1,4 +1,0 @@
-Want to make language agnostic
-    - Libraries for finding syntax structures?
-Running clang for whitespace / formatting differences...
-Multiple modes -- Original, standard

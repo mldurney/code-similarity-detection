@@ -9,24 +9,24 @@ namespace Engine {
 /**
  * TODO
  */
-std::string removeCharacters(const std::string&       original,
-                             const std::vector<char>& chars);
+std::string removeCharacters(const std::string &original,
+                             const std::vector<char> &chars);
 
 /**
  * TODO
  */
-std::string removeWhitespace(const std::string& original);
+std::string removeWhitespace(const std::string &original);
 
 /**
  * TODO
  */
-std::vector<std::vector<char>> makeKGrams(const std::string& text, int k);
+std::vector<std::vector<char>> makeKGrams(const std::string &text, int k);
 
 /**
  * TODO
  */
-std::vector<unsigned int>
-hashKGrams(const std::vector<std::vector<char>>& kGrams);
+std::vector<unsigned int> hashKGrams(
+    const std::vector<std::vector<char>> &kGrams);
 
 }  // namespace Engine
 
